@@ -1,0 +1,55 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# GitHub Pages – Static Site Deployment
+# Uses the official GitHub Pages Actions (configure-pages → upload-artifact →
+# deploy-pages) which is the ONLY method supported when the Pages source is
+# set to "GitHub Actions" in repo Settings → Pages.
+# ─────────────────────────────────────────────────────────────────────────────
+name: Deploy to GitHub Pages
+
+on:
+  # Run on every push to the default branch
+  push:
+    branches: ["main"]
+  # Allow manual re-runs from the Actions tab
+  workflow_dispatch:
+
+# ── Permissions required by the deploy-pages action ──────────────────────────
+permissions:
+  contents: read   # read the repository files
+  pages: write     # write to GitHub Pages
+  id-token: write  # issue OIDC token for trusted publishing
+
+# ── Prevent overlapping deployments; let an in-progress run finish ────────────
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # ── Single job: build (copy) + deploy ────────────────────────────────────────
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # 1. Check out the repository at the triggering commit
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Configure the GitHub Pages environment
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 3. Upload the entire repository root as the Pages artifact.
+      #    For a plain HTML/CSS/JS site, '.' is the correct path.
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      # 4. Deploy the uploaded artifact to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
