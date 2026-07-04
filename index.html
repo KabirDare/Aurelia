@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurelia — Coastal Fire, French Finesse | Fine Dining, Mumbai</title>
+<meta name="description" content="Aurelia is a sea-facing fine dining restaurant in Bandra, Mumbai, pairing classical French technique with Konkan coastal ingredients under Executive Chef Vivaan Rao.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+<!-- Cursor glow (desktop only, decorative) -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <svg class="preloader-mark" viewBox="0 0 220 120" width="180" height="98">
+    <path id="preloaderPath" d="M20,95 L58,20 L70,20 L108,95 M34,68 L94,68 M128,95 L128,20 L158,20 C176,20 176,55 158,55 L128,55 M170,95 L200,95" />
+  </svg>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#top" class="brand" aria-label="Aurelia — home">
+      <span class="brand-mark">A</span>
+      <span class="brand-name">Aurelia</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#story"><span>Our Story</span></a>
+      <a href="#menu"><span>Tasting Menu</span></a>
+      <a href="#chef"><span>The Chef</span></a>
+      <a href="#experience"><span>Experience</span></a>
+      <a href="#gallery"><span>Gallery</span></a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#reserve" class="btn btn-gold btn-small">
+        <span class="btn-label">Reserve</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav panel -->
+<div class="mobile-panel" id="mobilePanel">
+  <nav aria-label="Mobile">
+    <a href="#story">Our Story</a>
+    <a href="#menu">Tasting Menu</a>
+    <a href="#chef">The Chef</a>
+    <a href="#experience">Experience</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Praise</a>
+    <a href="#reserve" class="mobile-cta">Reserve a Table</a>
+  </nav>
+</div>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero">
+    <div class="hero-media" id="heroMedia">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=80" alt="Chef plating a fine dining dish with delicate garnish under warm light" loading="eager">
+      <div class="hero-scrim"></div>
+      <div class="hero-scrim-vignette"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow reveal-line" data-reveal>Bandra West · Mumbai · Est. 2015</p>
+      <h1 class="hero-title">
+        <span class="reveal-word" data-reveal>Coastal</span>
+        <span class="reveal-word reveal-word--italic" data-reveal>Fire,</span><br>
+        <span class="reveal-word" data-reveal>French</span>
+        <span class="reveal-word reveal-word--italic" data-reveal>Finesse.</span>
+      </h1>
+      <p class="hero-desc reveal-up" data-reveal>
+        A sea-facing table where Konkan spice meets classical French technique —
+        an eight-course arc of fire, brine, and citrus, shaped nightly by Chef Vivaan Rao.
+      </p>
+      <div class="hero-actions reveal-up" data-reveal>
+        <a href="#reserve" class="btn btn-gold btn-ripple">
+          <span class="btn-label">Reserve a Table</span>
+        </a>
+        <a href="#menu" class="btn btn-ghost">
+          <span class="btn-label">View Tasting Menu</span>
+        </a>
+      </div>
+    </div>
+
+    <a href="#story" class="scroll-indicator" aria-label="Scroll to next section">
+      <span class="scroll-indicator-line"><span></span></span>
+      <span class="scroll-indicator-text">Scroll</span>
+    </a>
+  </section>
+
+  <!-- divider ornament -->
+  <div class="ornament" data-reveal-ornament>
+    <svg viewBox="0 0 400 40" class="ornament-svg" aria-hidden="true">
+      <path class="ornament-path" d="M0,20 H160 C175,20 178,6 190,6 C202,6 202,34 214,34 C226,34 229,20 240,20 H400" />
+    </svg>
+  </div>
+
+  <!-- ================= ABOUT / STORY ================= -->
+  <section class="story" id="story">
+    <div class="story-inner">
+      <div class="story-media reveal-scale" data-reveal>
+        <div class="story-media-main">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80" alt="Interior of Aurelia's dining room with warm ambient lighting" loading="lazy">
+        </div>
+        <div class="story-media-float">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" alt="Close up of an elegantly set dining table" loading="lazy">
+        </div>
+        <div class="story-media-frame" aria-hidden="true"></div>
+      </div>
+
+      <div class="story-content">
+        <p class="eyebrow" data-reveal>Our Story</p>
+        <h2 class="section-title" data-reveal>Two coastlines,<br>one kitchen.</h2>
+        <p class="story-text" data-reveal>
+          Aurelia opened in 2015 with a simple provocation: what happens when the
+          smoke and spice of the Konkan coast is disciplined by the sauces and
+          structure of French haute cuisine? A decade later, the answer sits on
+          a quiet street in Bandra, glass walls open to the Arabian Sea.
+        </p>
+        <p class="story-text" data-reveal>
+          Every plate begins at the docks and markets of Sassoon and Crawford,
+          then travels through a kitchen trained in Lyon and Mumbai alike. The
+          result is neither fusion nor imitation — it is its own coastline.
+        </p>
+
+        <ul class="story-facts" data-reveal>
+          <li><span class="story-facts-num">2015</span><span class="story-facts-label">Founded in Bandra West</span></li>
+          <li><span class="story-facts-num">42</span><span class="story-facts-label">Seats, sea-facing</span></li>
+          <li><span class="story-facts-num">8</span><span class="story-facts-label">Courses, changed with the tide</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament" data-reveal-ornament>
+    <svg viewBox="0 0 400 40" class="ornament-svg" aria-hidden="true">
+      <path class="ornament-path" d="M0,20 H160 C175,20 178,6 190,6 C202,6 202,34 214,34 C226,34 229,20 240,20 H400" />
+    </svg>
+  </div>
+
+  <!-- ================= SIGNATURE DISHES ================= -->
+  <section class="menu" id="menu">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>The Tasting Menu</p>
+      <h2 class="section-title" data-reveal>Six courses from the coast.</h2>
+      <p class="section-sub" data-reveal>A rotating selection from our current eight-course arc — plated table-side, paired by our sommelier.</p>
+    </div>
+
+    <div class="dish-grid">
+
+      <article class="dish-card" data-reveal>
+        <div class="dish-card-media">
+          <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=900&q=80" alt="Malabar prawn bisque with saffron and coconut cream" loading="lazy">
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-top">
+            <h3>Malabar Prawn Bisque</h3>
+            <span class="dish-price">₹1,450</span>
+          </div>
+          <p>Saffron, coconut cream, cognac, curry leaf oil</p>
+        </div>
+      </article>
+
+      <article class="dish-card" data-reveal>
+        <div class="dish-card-media">
+          <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=900&q=80" alt="Tandoor-smoked duck breast with grape jus" loading="lazy">
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-top">
+            <h3>Tandoor-Smoked Duck</h3>
+            <span class="dish-price">₹2,200</span>
+          </div>
+          <p>Muscat grape jus, spiced pear, charred shallot</p>
+        </div>
+      </article>
+
+      <article class="dish-card" data-reveal>
+        <div class="dish-card-media">
+          <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=900&q=80" alt="Kokum butter poached lobster" loading="lazy">
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-top">
+            <h3>Kokum-Butter Lobster</h3>
+            <span class="dish-price">₹3,400</span>
+          </div>
+          <p>Curry leaf beurre blanc, heirloom radish</p>
+        </div>
+      </article>
+
+      <article class="dish-card" data-reveal>
+        <div class="dish-card-media">
+          <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=900&q=80" alt="Charcoal naan tartlet with foie gras and fig" loading="lazy">
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-top">
+            <h3>Charcoal Naan Tartlet</h3>
+            <span class="dish-price">₹1,850</span>
+          </div>
+          <p>Seared foie gras, black fig, Himalayan salt</p>
+        </div>
+      </article>
+
+      <article class="dish-card" data-reveal>
+        <div class="dish-card-media">
+          <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=900&q=80" alt="Saffron risotto with Alphonso mango and burrata" loading="lazy">
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-top">
+            <h3>Saffron Alphonso Risotto</h3>
+            <span class="dish-price">₹1,950</span>
+          </div>
+          <p>Burrata, toasted almond, mango gastrique</p>
+        </div>
+      </article>
+
+      <article class="dish-card" data-reveal>
+        <div class="dish-card-media">
+          <img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=900&q=80" alt="Dark chocolate and chili fondant with tamarind caramel" loading="lazy">
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-top">
+            <h3>Chocolate &amp; Chili Fondant</h3>
+            <span class="dish-price">₹1,200</span>
+          </div>
+          <p>Tamarind caramel, smoked sea salt ice cream</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= CHEF ================= -->
+  <section class="chef" id="chef">
+    <div class="chef-inner">
+      <div class="chef-media reveal-scale" data-reveal>
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1200&q=80" alt="Chef Vivaan Rao plating a dish in the Aurelia kitchen" loading="lazy">
+        <div class="chef-media-frame" aria-hidden="true"></div>
+      </div>
+
+      <div class="chef-content">
+        <p class="eyebrow" data-reveal>Executive Chef</p>
+        <h2 class="section-title" data-reveal>Vivaan Rao</h2>
+        <p class="chef-text" data-reveal>
+          Trained under a Bocuse d'Or finalist in Lyon before returning to the
+          city he grew up in, Chef Rao spent two years fishing alongside Sassoon
+          Dock traders to understand the coast he wanted to cook. Aurelia is
+          the result — a kitchen that treats Konkan ingredients with the same
+          rigor as a Lyonnaise sauce station.
+        </p>
+        <p class="chef-text" data-reveal>
+          "I don't want French food with Indian spices sprinkled on top. I want
+          a dish where you can't tell which coastline taught it discipline,
+          and which one gave it heat."
+        </p>
+
+        <ul class="chef-awards" data-reveal>
+          <li>
+            <svg viewBox="0 0 24 24" class="award-icon" aria-hidden="true"><path d="M12 2 L14.5 8.5 L21 9 L16 13.2 L17.6 20 L12 16.3 L6.4 20 L8 13.2 L3 9 L9.5 8.5 Z"/></svg>
+            <span>Condé Nast Traveller India — Best Fine Dining, 2024</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" class="award-icon" aria-hidden="true"><path d="M12 2 L14.5 8.5 L21 9 L16 13.2 L17.6 20 L12 16.3 L6.4 20 L8 13.2 L3 9 L9.5 8.5 Z"/></svg>
+            <span>Asia's 50 Best Restaurants — No. 14, 2023 &amp; 2024</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" class="award-icon" aria-hidden="true"><path d="M12 2 L14.5 8.5 L21 9 L16 13.2 L17.6 20 L12 16.3 L6.4 20 L8 13.2 L3 9 L9.5 8.5 Z"/></svg>
+            <span>Times Food Awards — Restaurant of the Year, 2022</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament" data-reveal-ornament>
+    <svg viewBox="0 0 400 40" class="ornament-svg" aria-hidden="true">
+      <path class="ornament-path" d="M0,20 H160 C175,20 178,6 190,6 C202,6 202,34 214,34 C226,34 229,20 240,20 H400" />
+    </svg>
+  </div>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="experience" id="experience">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>The Experience</p>
+      <h2 class="section-title" data-reveal>Three ways to sit at our table.</h2>
+    </div>
+
+    <div class="experience-grid">
+      <article class="experience-card" data-reveal>
+        <div class="experience-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 V44 M12 4 C12 14 12 18 12 24 M36 4 C36 14 36 18 36 24 M8 4 H16 M32 4 H40"/></svg>
+        </div>
+        <h3>The Dining Room</h3>
+        <p>Forty-two seats facing the Arabian Sea, an open pass, and a nightly eight-course arc built around the day's catch.</p>
+      </article>
+
+      <article class="experience-card" data-reveal>
+        <div class="experience-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44 V28 M14 6 H34 L31 24 C31 30 17 30 17 24 Z M14 6 C14 2 34 2 34 6"/></svg>
+        </div>
+        <h3>The Cellar</h3>
+        <p>Over four hundred labels curated with our sommelier, from Loire whites to small-batch Nashik reds.</p>
+      </article>
+
+      <article class="experience-card" data-reveal>
+        <div class="experience-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 V22 C8 16 14 12 24 12 C34 12 40 16 40 22 V40 M4 40 H44 M18 12 V8 M30 12 V8"/></svg>
+        </div>
+        <h3>Private Events</h3>
+        <p>A private chef's table for up to twenty guests, with bespoke tasting menus shaped around your occasion.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="gallery" id="gallery">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>Gallery</p>
+      <h2 class="section-title" data-reveal>A closer look.</h2>
+    </div>
+
+    <div class="masonry" id="masonryGrid">
+      <figure class="masonry-item" data-reveal><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Plated dish with garnish" loading="lazy"></figure>
+      <figure class="masonry-item" data-reveal><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" alt="Candlelit dining table" loading="lazy"></figure>
+      <figure class="masonry-item" data-reveal><img src="https://images.unsplash.com/photo-1478144592103-25e218a04891?auto=format&fit=crop&w=800&q=80" alt="Chef preparing a dish" loading="lazy"></figure>
+      <figure class="masonry-item" data-reveal><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=800&q=80" alt="Glass of red wine on a table" loading="lazy"></figure>
+      <figure class="masonry-item" data-reveal><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="Elegant restaurant dining room" loading="lazy"></figure>
+      <figure class="masonry-item" data-reveal><img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80" alt="Fine dining dessert plating" loading="lazy"></figure>
+      <figure class="masonry-item" data-reveal><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Wine cellar with bottles" loading="lazy"></figure>
+      <figure class="masonry-item" data-reveal><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Ambient restaurant interior" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>Praise</p>
+      <h2 class="section-title" data-reveal>From our guests.</h2>
+    </div>
+
+    <div class="testimonial-slider" id="testimonialSlider">
+      <div class="testimonial-track" id="testimonialTrack">
+
+        <blockquote class="testimonial-card">
+          <svg class="quote-mark" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 24V13.5C0 5.5 4.8 0.8 12 0L13.2 3.6C8.8 4.6 6.8 7.4 6.6 11H12V24H0ZM18.4 24V13.5C18.4 5.5 23.2 0.8 30.4 0L31.6 3.6C27.2 4.6 25.2 7.4 25 11H30.4V24H18.4Z"/></svg>
+          <p>Aurelia doesn't taste like fusion — it tastes like a coastline that was always meant to speak French. The lobster course alone is worth the drive to Bandra.</p>
+          <footer><span class="testimonial-name">Rhea Kapadia</span><span class="testimonial-role">Condé Nast Traveller India</span></footer>
+        </blockquote>
+
+        <blockquote class="testimonial-card">
+          <svg class="quote-mark" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 24V13.5C0 5.5 4.8 0.8 12 0L13.2 3.6C8.8 4.6 6.8 7.4 6.6 11H12V24H0ZM18.4 24V13.5C18.4 5.5 23.2 0.8 30.4 0L31.6 3.6C27.2 4.6 25.2 7.4 25 11H30.4V24H18.4Z"/></svg>
+          <p>We booked the chef's table for an anniversary and it turned into the best meal either of us has had in Mumbai, full stop. Every course had a reason to exist.</p>
+          <footer><span class="testimonial-name">Aarav &amp; Diya Mehta</span><span class="testimonial-role">Guests since 2019</span></footer>
+        </blockquote>
+
+        <blockquote class="testimonial-card">
+          <svg class="quote-mark" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 24V13.5C0 5.5 4.8 0.8 12 0L13.2 3.6C8.8 4.6 6.8 7.4 6.6 11H12V24H0ZM18.4 24V13.5C18.4 5.5 23.2 0.8 30.4 0L31.6 3.6C27.2 4.6 25.2 7.4 25 11H30.4V24H18.4Z"/></svg>
+          <p>The wine pairing alone deserves its own review. Our sommelier matched a Nashik red to the duck course that I still think about.</p>
+          <footer><span class="testimonial-name">Sanjana Iyer</span><span class="testimonial-role">Food critic, Mumbai Mirror</span></footer>
+        </blockquote>
+
+      </div>
+
+      <div class="testimonial-dots" id="testimonialDots"></div>
+    </div>
+  </section>
+
+  <!-- ================= RESERVATION CTA ================= -->
+  <section class="reserve" id="reserve">
+    <div class="reserve-media" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1800&q=80" alt="">
+      <div class="reserve-scrim"></div>
+    </div>
+
+    <div class="reserve-inner">
+      <p class="eyebrow eyebrow--light" data-reveal>Reservations</p>
+      <h2 class="section-title section-title--light" data-reveal>Your table is waiting.</h2>
+      <p class="reserve-sub" data-reveal>Seatings begin at 7 PM, Tuesday through Sunday. We recommend booking two weeks in advance for weekend tables.</p>
+
+      <form class="reserve-form" id="reserveForm" data-reveal novalidate>
+        <div class="field">
+          <label for="resName">Full name</label>
+          <input type="text" id="resName" name="name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="resDate">Date</label>
+          <input type="date" id="resDate" name="date" required>
+        </div>
+        <div class="field">
+          <label for="resTime">Time</label>
+          <select id="resTime" name="time" required>
+            <option value="" disabled selected>Select time</option>
+            <option>7:00 PM</option>
+            <option>7:30 PM</option>
+            <option>8:00 PM</option>
+            <option>8:30 PM</option>
+            <option>9:00 PM</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="resGuests">Guests</label>
+          <select id="resGuests" name="guests" required>
+            <option value="" disabled selected>Party size</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7+</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-ripple reserve-submit">
+          <span class="btn-label">Confirm Reservation</span>
+        </button>
+      </form>
+
+      <p class="reserve-confirmation" id="reserveConfirmation" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#top" class="brand brand--footer">
+        <span class="brand-mark">A</span>
+        <span class="brand-name">Aurelia</span>
+      </a>
+      <p>16 Waterline Road, Bandra West<br>Mumbai 400050, India</p>
+      <p>+91 22 4567 8900<br>reservations@aureliamumbai.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#story">Our Story</a>
+      <a href="#menu">Tasting Menu</a>
+      <a href="#chef">The Chef</a>
+      <a href="#experience">Experience</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Hours</h4>
+      <p>Tue – Fri: 7 PM – 12 AM</p>
+      <p>Sat – Sun: 1 PM – 12 AM</p>
+      <p>Monday: Closed</p>
+    </div>
+
+    <div class="footer-col footer-newsletter">
+      <h4>Stay in Touch</h4>
+      <p>New menus, seasonal pairings, and private-event dates — a few times a year, never more.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" required aria-label="Email address">
+        <button type="submit" aria-label="Subscribe">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+      <p class="newsletter-note" id="newsletterNote"></p>
+
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-3.3 17.4c0-.9 0-2 .3-2.9l1.5-6.4s-.4-.8-.4-1.9c0-1.8 1-3.1 2.3-3.1 1.1 0 1.6.8 1.6 1.8 0 1.1-.7 2.7-1 4.2-.3 1.3.6 2.3 1.9 2.3 2.3 0 3.9-3 3.9-6.5 0-2.7-1.8-4.7-5.1-4.7-3.7 0-6 2.8-6 5.8 0 1.1.4 2.2.9 2.8.1.1.1.2.1.4l-.4 1.4c-.1.2-.2.3-.4.2-1.4-.6-2.2-2.5-2.2-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1 0-2-.6-2.4-1.2l-.6 2.5c-.2.9-.8 2-1.2 2.7A9 9 0 1 0 12 3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aurelia Restaurant. All rights reserved.</p>
+    <p class="footer-credit">Coastal fire, French finesse.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
